@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+shopt -s dotglob
+echo "---> Installing modsecurity rules..."
+mv /tmp/src/rules/* /opt/app-root/rules
+mv /tmp/src/errors/* /opt/app-root/errors
+
+# Fix source directory permissions
+fix-permissions ../
